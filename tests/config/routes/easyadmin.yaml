@@ -1,0 +1,4 @@
+easyadmin:
+    resource: "@CmsSearchBundle/src/Controller/Admin/"
+    type: 'easyadmin.routes'
+    prefix: /test-admin
