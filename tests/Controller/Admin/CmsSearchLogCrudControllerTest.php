@@ -40,8 +40,7 @@ final class CmsSearchLogCrudControllerTest extends AbstractEasyAdminControllerTe
 
     public function testIndexPage(): void
     {
-        $client = self::createClientWithDatabase();
-        $this->loginAsAdmin($client);
+        $client = self::createAuthenticatedClient();
 
         // 使用测试专用的路由路径
         $crawler = $client->request('GET', '/test-admin');
