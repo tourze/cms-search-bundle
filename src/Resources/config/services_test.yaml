@@ -8,11 +8,7 @@ services:
   Tourze\CmsSearchBundle\DataFixtures\:
     resource: '../../DataFixtures/'
 
-  # 测试专用Dashboard控制器 - 仅用于解决EasyAdmin测试中的Dashboard依赖问题
-  Tourze\CmsSearchBundle\Tests\Controller\Admin\TestDashboardController:
-    tags: ['controller.service_arguments']
-
-  # 测试专用链接生成器 - 使用TestDashboardController避免多Dashboard冲突
+  # 测试专用链接生成器 - 使用测试框架的标准Dashboard避免多Dashboard冲突
   Tourze\CmsSearchBundle\Tests\Service\TestLinkGenerator:
     decorates: Tourze\EasyAdminMenuBundle\Service\LinkGeneratorInterface
     arguments:

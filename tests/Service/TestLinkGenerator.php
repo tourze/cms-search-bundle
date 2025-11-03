@@ -6,12 +6,11 @@ namespace Tourze\CmsSearchBundle\Tests\Service;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
-use Tourze\CmsSearchBundle\Tests\Controller\Admin\TestDashboardController;
 use Tourze\EasyAdminMenuBundle\Service\LinkGeneratorInterface;
 
 /**
  * 测试环境专用链接生成器
- * 明确指定使用TestDashboardController来避免多Dashboard冲突
+ * 使用测试框架的标准Dashboard来避免多Dashboard冲突
  */
 final class TestLinkGenerator implements LinkGeneratorInterface
 {
@@ -24,7 +23,7 @@ final class TestLinkGenerator implements LinkGeneratorInterface
     {
         return $this->adminUrlGenerator
             ->unsetAll()
-            ->setDashboard(TestDashboardController::class)
+            ->setDashboard('SymfonyTestingFramework\Controller\Admin\DashboardController')
             ->setController($entityClass)
             ->setAction(Action::INDEX)
             ->generateUrl()

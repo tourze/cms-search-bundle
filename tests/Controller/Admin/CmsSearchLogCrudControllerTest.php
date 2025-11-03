@@ -9,8 +9,6 @@ use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use Tourze\CmsSearchBundle\Controller\Admin\CmsSearchLogCrudController;
 use Tourze\CmsSearchBundle\Entity\SearchLog;
 use Tourze\CmsSearchBundle\Repository\SearchLogRepository;
-use Tourze\CmsSearchBundle\Tests\CmsSearchKernel;
-use Tourze\CmsSearchBundle\Tests\Controller\Admin\TestDashboardController;
 use Tourze\PHPUnitSymfonyWebTest\AbstractEasyAdminControllerTestCase;
 
 /**
@@ -20,14 +18,6 @@ use Tourze\PHPUnitSymfonyWebTest\AbstractEasyAdminControllerTestCase;
 #[RunTestsInSeparateProcesses]
 final class CmsSearchLogCrudControllerTest extends AbstractEasyAdminControllerTestCase
 {
-    /**
-     * 提供自定义的Dashboard控制器类名
-     */
-    protected function getCustomDashboardFqcn(): string
-    {
-        return TestDashboardController::class;
-    }
-
     protected function getEntityFqcn(): string
     {
         return SearchLog::class;
@@ -42,8 +32,8 @@ final class CmsSearchLogCrudControllerTest extends AbstractEasyAdminControllerTe
     {
         $client = self::createAuthenticatedClient();
 
-        // 使用测试专用的路由路径
-        $crawler = $client->request('GET', '/test-admin');
+        // 使用标准的后台路径
+        $crawler = $client->request('GET', '/admin');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Navigate to SearchLog CRUD if link exists
