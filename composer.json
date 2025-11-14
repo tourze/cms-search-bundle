@@ -1,6 +1,6 @@
 {
   "name": "tourze/cms-search-bundle",
-  "description": "",
+  "description": "A Symfony bundle that provides CMS search functionality with logging and management features",
   "type": "symfony-bundle",
   "license": "MIT",
   "require": {
