@@ -23,11 +23,6 @@ final class CmsSearchLogCrudControllerTest extends AbstractEasyAdminControllerTe
         return SearchLog::class;
     }
 
-    public function testGetEntityFqcn(): void
-    {
-        $this->assertSame(SearchLog::class, CmsSearchLogCrudController::getEntityFqcn());
-    }
-
     public function testIndexPage(): void
     {
         $client = self::createAuthenticatedClient();
