@@ -55,7 +55,6 @@ final class TestLinkGenerator implements LinkGeneratorInterface
     private function parseUrlQueryParameters(string $url): ?array
     {
         $parsedUrl = parse_url($url);
-        // @phpstan-ignore-next-line booleanNot.alwaysFalse (defensive programming for test safety)
         if (false === $parsedUrl || !isset($parsedUrl['query']) || !is_string($parsedUrl['query'])) {
             return null;
         }

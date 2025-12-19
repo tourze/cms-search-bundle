@@ -2,13 +2,13 @@
 
 namespace Tourze\CmsSearchBundle;
 
-use CmsBundle\CmsBundle;
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Tourze\BundleDependency\BundleDependencyInterface;
+use Tourze\CmsBundle\CmsBundle;
 use Tourze\EasyAdminMenuBundle\EasyAdminMenuBundle;
 
-class CmsSearchBundle extends Bundle implements BundleDependencyInterface
+final class CmsSearchBundle extends Bundle implements BundleDependencyInterface
 {
     public static function getBundleDependencies(): array
     {

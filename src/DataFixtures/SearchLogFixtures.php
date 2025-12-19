@@ -8,7 +8,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Tourze\CmsSearchBundle\Entity\SearchLog;
 
-class SearchLogFixtures extends Fixture
+final class SearchLogFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {

@@ -9,7 +9,7 @@ use Tourze\CmsSearchBundle\Entity\SearchLog;
 use Tourze\EasyAdminMenuBundle\Service\LinkGeneratorInterface;
 use Tourze\EasyAdminMenuBundle\Service\MenuProviderInterface;
 
-readonly class AdminMenu implements MenuProviderInterface
+final readonly class AdminMenu implements MenuProviderInterface
 {
     public function __construct(private LinkGeneratorInterface $linkGenerator)
     {

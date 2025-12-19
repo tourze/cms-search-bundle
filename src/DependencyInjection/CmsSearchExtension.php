@@ -4,7 +4,7 @@ namespace Tourze\CmsSearchBundle\DependencyInjection;
 
 use Tourze\SymfonyDependencyServiceLoader\AutoExtension;
 
-class CmsSearchExtension extends AutoExtension
+final class CmsSearchExtension extends AutoExtension
 {
     protected function getConfigDir(): string
     {
